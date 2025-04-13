@@ -1,0 +1,63 @@
+<VotingScreen>:
+    orientation: 'vertical'
+    spacing: dp(10)
+    padding: dp(20)
+
+    Label:
+        text: "Enter Candidate Details"
+        font_size: '20sp'
+        size_hint_y: None
+        height: self.texture_size[1] + dp(10)
+
+    GridLayout:
+        id: input_area
+        cols: 2
+        spacing: dp(20)
+        size_hint_y: None
+        height: self.minimum_height
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(10)
+            Label:
+                text: "Candidate 1"
+            TextInput:
+                id: name1
+                multiline: False
+            Button:
+                text: "Upload Image"
+                on_release: root.upload_image(0)
+
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: dp(10)
+            Label:
+                text: "Candidate 2"
+            TextInput:
+                id: name2
+                multiline: False
+            Button:
+                text: "Upload Image"
+                on_release: root.upload_image(1)
+
+    Button:
+        text: "Submit Candidates"
+        size_hint_y: None
+        height: dp(50)
+        on_release: root.submit_candidates()
+
+<VoteScreen>:
+    orientation: 'vertical'
+    spacing: dp(10)
+    padding: dp(20)
+
+    Label:
+        text: "Vote for Your Favorite Candidate"
+        font_size: '20sp'
+        size_hint_y: None
+        height: dp(40)
+
+    GridLayout:
+        id: voting_area
+        cols: 2
+        spacing: dp(20)
